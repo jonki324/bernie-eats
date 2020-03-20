@@ -6,10 +6,16 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
   <link rel="stylesheet" href="{% sass_src 'scss/bootstrap.scss' %}">
-  <title>{% block title %}Django{% endblock title %}</title>
+  <link rel="stylesheet" href="{% static 'css/all.css' %}">
+  <title>{% block title %}BernieEats{% endblock title %}</title>
 </head>
 <body>
+<div id="app" class="container-fluid">
 {% block main %}{% endblock main %}
+</div>
 <script src="{% static 'js/bootstrap.bundle.min.js' %}"></script>
+<script src="{% static 'js/vue.js' %}"></script>
+<script src="{% static 'js/axios.js' %}"></script>
+{% block script %}{% endblock script %}
 </body>
 </html>

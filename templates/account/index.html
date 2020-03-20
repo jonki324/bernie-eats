@@ -8,4 +8,18 @@
 <h1>test {{ param }}</h1>
   <button type="button" class="btn btn-orange">orange</button>
   <button type="button" class="btn btn-warning">warning</button>
+  <i class="fas fa-user"></i>
+  <h2>[[ msg ]]</h2>
 {% endblock main %}
+
+{% block script %}
+<script>
+  var app = new Vue({
+      el: '#app',
+      delimiters: ['[[', ']]'],
+      data: {
+          msg: 'hello'
+      }
+  })
+</script>
+{% endblock script %}
