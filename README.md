@@ -9,7 +9,7 @@ $ pipenv --python 3.7
 
 ## インストールパッケージ
 ```bash
-$ pipenv install django libsass django-compressor django-sass-processor
+$ pipenv install django libsass django-compressor django-sass-processor psycopg2-binary
 ```
 
 ## Djangoプロジェクトの作成
@@ -20,4 +20,11 @@ $ django-admin startproject config .
 ## Djangoアプリケーションの作成
 ```bash
 $ django-admin startapp account
+```
+
+## データベースの作成
+```bash
+$ python manage.py makemigrations
+$ python manage.py migrate
+$ python manage.py createsuperuser
 ```
