@@ -39,6 +39,10 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'sass_processor',
     'account',
+    'item',
+    'order',
+    'kitchen',
+    'util',
 ]
 
 MIDDLEWARE = [
