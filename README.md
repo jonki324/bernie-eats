@@ -9,7 +9,7 @@ $ pipenv --python 3.7
 
 ## インストールパッケージ
 ```bash
-$ pipenv install django
+$ pipenv install django libsass django-compressor django-sass-processor
 ```
 
 ## Djangoプロジェクトの作成
