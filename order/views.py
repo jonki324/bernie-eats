@@ -1,6 +1,8 @@
 from django.shortcuts import render, HttpResponse
+from django.contrib.auth.decorators import login_required
 
 
+@login_required
 def index(request):
     """商品選択画面"""
     return HttpResponse('index')

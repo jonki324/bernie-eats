@@ -1,25 +1,30 @@
 {% extends 'base.html' %}
+{% load bootstrap4 %}
 
 {% block title %}
-  {{ title }}
+Bernie Eats - login
 {% endblock title %}
 
 {% block main %}
-<h1>test {{ param }}</h1>
-  <button type="button" class="btn btn-orange">orange</button>
-  <button type="button" class="btn btn-warning">warning</button>
-  <i class="fas fa-user"></i>
-  <h2>[[ msg ]]</h2>
+<div class="container mt-4">
+  <div class="row">
+    <div class="col-md-4 offset-md-4">
+      <div class="card">
+        <h5 class="card-header text-center"><i class="fas fa-utensils"></i> Bernie Eats <i
+                class="fas fa-thumbs-up"></i></h5>
+        <div class="card-body">
+          <p class="card-text">
+          <form action="{% url 'account:login' %}" method="post">
+            {% csrf_token %}
+            {% bootstrap_form form %}
+            <div class="form-group">
+              <button class="btn btn-success btn-block">ログイン</button>
+            </div>
+          </form>
+          </p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 {% endblock main %}
-
-{% block script %}
-<script>
-  var app = new Vue({
-      el: '#app',
-      delimiters: ['[[', ']]'],
-      data: {
-          msg: 'hello'
-      }
-  })
-</script>
-{% endblock script %}
