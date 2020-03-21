@@ -5,13 +5,61 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="icon" href="{% static 'favicon.png' %}">
   <link rel="stylesheet" href="{% sass_src 'scss/bootstrap.scss' %}">
   <link rel="stylesheet" href="{% static 'css/all.css' %}">
-  <title>{% block title %}BernieEats{% endblock title %}</title>
+  <title>{% block title %}Bernie Eats{% endblock title %}</title>
 </head>
 <body>
-<div id="app" class="container-fluid">
+<div id="app">
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+    <a class="navbar-brand" href="{% url 'order:index' %}"><i class="fas fa-utensils"></i> Bernie Eats</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="{% url 'order:index' %}"><i class="fas fa-cart-plus"></i> 注文</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'order:status' %}"><i class="fas fa-question"></i> 注文状況</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="{% url 'kitchen:index' %}"><i class="fas fa-pizza-slice"></i> キッチン</a>
+        </li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown"
+             aria-haspopup="true" aria-expanded="false">
+            <i class="fas fa-cog"></i> 設定
+          </a>
+          <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+            <a class="dropdown-item" href="{% url 'item:index' %}"><i class="fas fa-hamburger"></i> 商品</a>
+            <div class="dropdown-divider"></div>
+            <a class="dropdown-item" href="{% url 'util:log' %}"><i class="fas fa-calculator"></i> 集計</a>
+            <a class="dropdown-item" href="{% url 'util:summary' %}"><i class="fas fa-history"></i> ログ</a>
+          </div>
+        </li>
+      </ul>
+      <form class="form-inline my-2 my-lg-0" action="{% url 'account:logout' %}">
+        <button class="btn btn-success my-2 my-sm-0" type="submit"><i class="fas fa-sign-out-alt"></i> ログアウト
+        </button>
+      </form>
+      <form class="form-inline my-2 my-lg-0" action="{% url 'account:index' %}">
+        <button class="btn btn-success my-2 my-sm-0" type="submit"><i class="fas fa-sign-in-alt"></i> ログイン</button>
+      </form>
+    </div>
+  </nav>
+{% block header %}{% endblock header %}
+</header>
+<main>
 {% block main %}{% endblock main %}
+</main>
+<footer class="mt-5 mb-3">
+  <p class="text-center text-muted">© 2020 Jonki324</p>
+</footer>
 </div>
 <script src="{% static 'js/jquery-3.4.1.js' %}"></script>
 <script src="{% static 'js/bootstrap.bundle.js' %}"></script>
