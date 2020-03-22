@@ -12,6 +12,7 @@ django-compressor = "*"
 django-sass-processor = "*"
 psycopg2-binary = "*"
 django-bootstrap4 = "*"
+pillow = "*"
 
 [requires]
 python_version = "3.7"
