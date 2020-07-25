@@ -4,6 +4,7 @@ url = "https://pypi.org/simple"
 verify_ssl = true
 
 [dev-packages]
+flake8 = "*"
 
 [packages]
 django = "*"
@@ -14,3 +15,7 @@ dj-database-url = "*"
 
 [requires]
 python_version = "3.8"
+
+[scripts]
+start = "python manage.py runserver 0.0.0.0:8000 --settings config.local_settings"
+lint = "flake8 --show-source ."
