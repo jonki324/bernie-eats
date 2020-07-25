@@ -19,3 +19,5 @@ python_version = "3.8"
 [scripts]
 start = "python manage.py runserver 0.0.0.0:8000 --settings config.local_settings"
 lint = "flake8 --show-source ."
+makemigrations = "python manage.py makemigrations --settings config.local_settings"
+migrate = "python manage.py migrate --settings config.local_settings"
