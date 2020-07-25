@@ -7,10 +7,52 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel="icon" href="{% static 'favicon.png' %}">
     {% bootstrap_css %}
+    {% block css %}{% endblock css %}
     <title>{% block title %}Bernie Eats{% endblock title %}</title>
 </head>
   <body>
-    {% block main %}{% endblock main %}
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark bg-success">
+        <a class="navbar-brand" href="#">BernieEats</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">注文</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">注文状況</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">キッチン</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">集計</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">ログ</a>
+            </li>
+          </ul>
+          <form class="form-inline my-2 my-lg-0">
+            <button class="btn btn-success my-2 my-sm-0" type="submit">ログアウト</button>
+          </form>
+        </div>
+      </nav>
+      <h2 class="text-center mt-5">
+        {% block header %}{% endblock header %}
+      </h2>
+    </header>
+    <main>
+      <div class="container mt-5">
+        {% block main %}{% endblock main %}
+      </div>
+    </main>
+    <footer class="container-fluid mt-5 mb-3">
+      <p class="text-center text-muted">© 2020 Jonki324</p>
+    </footer>
     {% bootstrap_javascript jquery='full' %}
+    {% block script %}{% endblock script %}
   </body>
 </html>
